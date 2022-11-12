@@ -109,7 +109,7 @@ module.exports = function (config) {
     return {
         dir: {
             input: 'src',
-            output: 'docs',
+            output: 'dist',
             includes: 'includes',
             layouts: 'layouts',
         },
