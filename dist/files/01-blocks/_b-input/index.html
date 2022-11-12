@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" class="l-fret11ty">
+    <head>
+        <meta charset="utf-8">
+        <title>
+           Styleguide fret-11ty &mdash; _b-input
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai-sublime.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="http://127.0.0.1:8080/css/fret11ty.css">
+        <link rel="stylesheet" href="http://127.0.0.1:8080/css/example.css">
+        <script src="http://127.0.0.1:8080/js/main.js" type="module"></script>
+    </head>
+    <body class="l-fret11ty-body">
+        <aside class="l-fret11ty-side border-right">
+            <div class="l-fret11ty-side_inner">
+                <div class="color-bg-emphasis px-4 py-4">
+    <header class="l-fret11ty-logo">
+    <a href="http://127.0.0.1:8080/index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="340" height="47" viewBox="0 0 340 47" class="css-1j8o68f">
+            <path d="M40.123 0v47h8.9V31.311h8.565L71.344 47h10.588v-.604L67.637 30.371c8.968-1.81 11.935-8.312 11.935-14.748C79.572 7.51 73.705.135 62.578.068 55.093.068 47.608 0 40.123 0Zm45.315.068V47h35.335v-8.717H94.271V27.69h25.56v-8.246H94.27V8.65h26.502V.068Zm42.214 0v8.045h14.97V47h8.901V8.113h14.971V.068Zm72.153 0v8.045h7.351v31.378h-7.08V47h22.455v-7.51h-6.54V.069Zm24.884 0v8.045h7.35v31.378h-7.08V47h22.455v-7.51h-6.54V.069Zm25.084 0v8.045h14.971V47h8.9V8.113h14.971V.068Zm44.372 0V.47l18.14 27.154V47h8.9V27.624L340 .47V.068h-10.723l-12.54 19.376L304.731.068ZM0 .134V47h8.9V29.634h23.67v-8.18H8.9V8.65h25.02V.134Zm49.023 8.18h13.555c5.597 0 8.092 3.754 8.092 7.509 0 3.754-2.427 7.509-8.092 7.509H49.023Zm121.92 13.074v7.51h24.883v-7.51z" fill="#FFF" />
+        </svg>
+    </a>
+</header>
+
+</div>
+<div class="border-bottom px-4 py-2">
+    <div class="input-group">
+    <input class="form-control" placeholder="Search" type="text" id="elSearch">
+    <span class="input-group-button">
+        <button class="btn" type="button" aria-label="Clear field" id="elSearchClear">
+            <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z"></path></svg>
+        </button>
+    </span>
+</div>
+
+
+
+</div>
+
+<div class="l-fret11ty-menu p-4">
+    <div id="elNavigation"></div>
+</div>
+
+<div class="color-bg-subtle px-4 py-2">
+    <footer class="f6">
+    &copy; fret-11ty
+</footer>
+
+</div>
+
+<script id="elNavigationTpl" type="x-tmpl-mustache">
+<%#nav%>
+    <details
+        class="menu mb-2"
+        <%#hidden%>
+            hidden
+        <%/hidden%>
+        <%#open%>
+            open
+        <%/open%>
+    >
+        <summary class="menu-heading color-bg-subtle">
+            <span><%folder%></span>
+        </summary>
+        <%#data%>
+            <a
+                class="menu-item"
+                href="<%url%>"
+                <%#selected%>aria-current="page"<%/selected%>
+            >
+                <%name%>
+            </a>
+        <%/data%>
+    </details>
+<%/nav%>
+</script>
+
+
+
+<template id="elNavigationData">
+{
+    "nav": [{
+                "folder": "01-blocks",
+                "open": true,
+                "data": [{
+                            "selected": false,
+                            "url": "http://127.0.0.1:8080/files/01-blocks/_b-button/",
+                            "name": "_b-button"
+                        },{
+                            "selected": true,
+                            "url": "http://127.0.0.1:8080/files/01-blocks/_b-input/",
+                            "name": "_b-input"
+                        }]
+            },
+        {
+            "folder": "pages",
+            "open": false,
+            "data": [{
+                        "selected": false,
+                        "url": "http://127.0.0.1:8080/",
+                        "name": "Index Page"
+                    },{
+                        "selected": false,
+                        "url": "http://127.0.0.1:8080/pages/comparison/",
+                        "name": "Files comparison"
+                    }]
+        }
+    ]
+}
+</template>
+
+            </div>
+        </aside>
+        <main class="l-fret11ty-main color-bg-inset p-4">
+            
+<div class="l-fret11ty-flex">
+    <div class="l-fret11ty-header">
+        <h1>_b-input</h1>
+        <button class="btn" type="button" aria-label="Toggle sidebar" id="elHideSidebar">
+            <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2.75 2.5a.25.25 0 00-.25.25v2.5a.75.75 0 01-1.5 0v-2.5C1 1.784 1.784 1 2.75 1h2.5a.75.75 0 010 1.5h-2.5zM10 1.75a.75.75 0 01.75-.75h2.5c.966 0 1.75.784 1.75 1.75v2.5a.75.75 0 01-1.5 0v-2.5a.25.25 0 00-.25-.25h-2.5a.75.75 0 01-.75-.75zM1.75 10a.75.75 0 01.75.75v2.5c0 .138.112.25.25.25h2.5a.75.75 0 010 1.5h-2.5A1.75 1.75 0 011 13.25v-2.5a.75.75 0 01.75-.75zm12.5 0a.75.75 0 01.75.75v2.5A1.75 1.75 0 0113.25 15h-2.5a.75.75 0 010-1.5h2.5a.25.25 0 00.25-.25v-2.5a.75.75 0 01.75-.75z"></path></svg>
+            <span>Toggle sidebar</span>
+        </button>
+    </div>
+    <div>
+        <div class="Label mr-1">
+            ./src/files/01-blocks/_b-input.md
+        </div>
+        <div class="Label mr-1 Label--accent">
+            2022-11-12
+        </div>
+        <div class="Label mr-1 Label--secondary">
+            files
+        </div>
+    </div>
+</div>
+
+<div class="l-fret11ty-flex"><h2>Example</h2>
+<p>To keep track which files are not yet included to style guide run <code>npm run dircompare</code> to create comparison page.</p>
+</div>
+
+
+
+
+
+
+
+        </main>
+    </body>
+</html>
