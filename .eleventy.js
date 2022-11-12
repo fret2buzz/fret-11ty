@@ -44,7 +44,7 @@ module.exports = function (config) {
     }
 
     // config.setBrowserSyncConfig({
-    //     files: ['./docs/css/*.css', './docs/js/*.js'],
+    //     files: ['./dist/css/*.css', './dist/js/*.js'],
     // });
 
     config.addPairedNunjucksShortcode("example", function(content, arr) {

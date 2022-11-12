@@ -8,9 +8,9 @@
     "build": "npx @11ty/eleventy --config=.eleventy.js",
     "serve": "npx @11ty/eleventy --config=.eleventy.js --serve",
     "dircompare": "node .dircompare",
-    "watch": "node ./node_modules/sass/sass.js --load-path=node_modules --style=compressed --no-source-map -w \"./src/scss\":\"./docs/css\"",
-    "scss": "node ./node_modules/sass/sass.js --load-path=node_modules --style=compressed --no-source-map \"./src/scss\":\"./docs/css\"",
-    "styles": "node ./node_modules/sass/sass.js --load-path=node_modules --style=compressed --no-source-map \"./src/styles\":\"./docs/css\"",
+    "watch": "node ./node_modules/sass/sass.js --load-path=node_modules --style=compressed --no-source-map -w \"./src/scss\":\"./dist/css\"",
+    "scss": "node ./node_modules/sass/sass.js --load-path=node_modules --style=compressed --no-source-map \"./src/scss\":\"./dist/css\"",
+    "styles": "node ./node_modules/sass/sass.js --load-path=node_modules --style=compressed --no-source-map \"./src/styles\":\"./dist/css\"",
     "dev": "node .dircompare && npm run scss && npm run styles && npm run build",
     "prod": "node .dircompare && npm run scss && npm run styles && cross-env BUILD_ENV=production npm run build"
   },
@@ -32,6 +32,6 @@
     "pathFiles": "./src/files/",
     "pathStyles": "./src/styles/",
     "pathPages": "./src/pages/",
-    "dist": "https://fret2buzz.github.io/fret-11ty"
+    "dist": "https://fret-11ty.netlify.app"
   }
 }
