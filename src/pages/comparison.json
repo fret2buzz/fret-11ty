@@ -1,0 +1,72 @@
+{
+  "title": "Files comparison",
+  "comparison": [
+    {
+      "folder": "root",
+      "files": [
+        {
+          "path2": "./src/styles/",
+          "relativePath": "\\",
+          "name2": "example.scss",
+          "state": "right",
+          "permissionDeniedState": "access-ok",
+          "type1": "missing",
+          "type2": "file",
+          "level": 0,
+          "size2": 55,
+          "date2": "2022-11-12T18:50:25.309Z"
+        }
+      ]
+    },
+    {
+      "folder": "00-base",
+      "files": [
+        {
+          "path2": "./src/styles/\\00-base",
+          "relativePath": "\\00-base",
+          "name2": "_reset.scss",
+          "state": "right",
+          "permissionDeniedState": "access-ok",
+          "type1": "missing",
+          "type2": "file",
+          "level": 1,
+          "size2": 7036,
+          "date2": "2022-11-12T18:50:00.899Z"
+        }
+      ]
+    },
+    {
+      "folder": "01-blocks",
+      "files": [
+        {
+          "path1": "./src/files/\\01-blocks",
+          "path2": "./src/styles/\\01-blocks",
+          "relativePath": "\\01-blocks",
+          "name1": "_b-button.njk",
+          "name2": "_b-button.scss",
+          "state": "equal",
+          "permissionDeniedState": "access-ok",
+          "type1": "file",
+          "type2": "file",
+          "level": 1,
+          "size1": 617,
+          "size2": 154,
+          "date1": "2022-11-12T19:21:17.922Z",
+          "date2": "2022-11-12T18:41:06.960Z"
+        },
+        {
+          "path1": "./src/files/\\01-blocks",
+          "relativePath": "\\01-blocks",
+          "name1": "_b-input.md",
+          "state": "left",
+          "permissionDeniedState": "access-ok",
+          "type1": "file",
+          "type2": "missing",
+          "level": 1,
+          "size1": 126,
+          "date1": "2022-11-12T19:23:43.205Z"
+        }
+      ]
+    }
+  ]
+}

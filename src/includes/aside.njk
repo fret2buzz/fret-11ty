@@ -1,0 +1,81 @@
+<div class="color-bg-emphasis px-4 py-4">
+    {% include 'header.njk' %}
+</div>
+<div class="border-bottom px-4 py-2">
+    {% include 'search.njk' %}
+</div>
+
+<div class="l-fret11ty-menu p-4">
+    <div id="elNavigation"></div>
+</div>
+
+<div class="color-bg-subtle px-4 py-2">
+    {% include 'footer.njk' %}
+</div>
+
+<script id="elNavigationTpl" type="x-tmpl-mustache">
+<%#nav%>
+    <details
+        class="menu mb-2"
+        <%#hidden%>
+            hidden
+        <%/hidden%>
+        <%#open%>
+            open
+        <%/open%>
+    >
+        <summary class="menu-heading color-bg-subtle">
+            <span><%folder%></span>
+        </summary>
+        <%#data%>
+            <a
+                class="menu-item"
+                href="<%url%>"
+                <%#selected%>aria-current="page"<%/selected%>
+            >
+                <%name%>
+            </a>
+        <%/data%>
+    </details>
+<%/nav%>
+</script>
+
+{% for tag in collections.tagsList %}
+    <a href="/tags/{{tag}}">{{tag}}</a>
+{% endfor %}
+
+<template id="elNavigationData">
+{
+    "nav": [
+        {%- for folder in folders -%}
+            {
+                "folder": "{{ folder }}",
+                "open": {{ page.filePathStem.indexOf(folder) != -1 }},
+                "data": [
+                    {%- for section in collections[folder] -%}
+                        {
+                            "selected": {{ page.filePathStem == section.filePathStem }},
+                            "url": "{{ section.url }}",
+                            "name": "{{ section.fileSlug }}"
+                        }{% if not loop.last %},{% endif %}
+                    {%- endfor -%}
+                ]
+            }{% if not loop.last %},{% endif %}
+        {%- endfor -%}
+        ,
+        {
+            "folder": "pages",
+            "open": {{ page.filePathStem.indexOf("pages") != -1 }},
+            "data": [
+                {%- for section in collections.pages -%}
+                    {
+                        "selected": {{ page.filePathStem == section.filePathStem }},
+                        "url": "{{ section.url }}",
+                        "name": "{{ section.data.title or section.fileSlug }}"
+                    }{% if not loop.last %},{% endif %}
+                {%- endfor -%}
+            ]
+        }
+    ]
+}
+</template>

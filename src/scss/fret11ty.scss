@@ -1,0 +1,151 @@
+@import '@primer/css/color-modes/themes/light.scss';
+@import '@primer/css/color-modes/themes/dark.scss';
+@import '@primer/css/color-modes/native.scss';
+
+@import '@primer/css/base/index.scss';
+
+@import '@primer/css/support/index.scss';
+
+@import '@primer/css/buttons/index.scss';
+@import '@primer/css/labels/mixins.scss';
+@import '@primer/css/labels/labels.scss';
+
+@import '@primer/css/navigation/menu.scss';
+@import '@primer/css/subhead/subhead.scss';
+
+@import '@primer/css/forms/form-control.scss';
+@import '@primer/css/forms/input-group.scss';
+
+@import '@primer/css/markdown/markdown-body.scss';
+@import '@primer/css/markdown/headings.scss';
+@import '@primer/css/markdown/lists.scss';
+@import '@primer/css/markdown/tables.scss';
+@import '@primer/css/markdown/images.scss';
+@import '@primer/css/markdown/blob-csv.scss';
+@import '@primer/css/markdown/footnotes.scss';
+
+@import '@primer/css/box/box.scss';
+@import '@primer/css/utilities/borders.scss';
+@import '@primer/css/utilities/colors.scss';
+@import '@primer/css/utilities/details.scss';
+@import '@primer/css/utilities/margin.scss';
+@import '@primer/css/utilities/padding.scss';
+@import '@primer/css/utilities/typography.scss';
+
+// Custom layout
+.l-fret11ty {
+    &-body {
+        display: grid;
+        grid-template-columns: 300px minmax(0, 1fr);
+        min-height: 100vh;
+        overflow-y: scroll;
+
+        &.m-full {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    &-side {
+        position: relative;
+
+        &_inner {
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            left: 0;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .m-full & {
+            display: none;
+        }
+    }
+
+    &-main {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 24px;
+    }
+
+    &-menu {
+        overflow-y: auto;
+    }
+
+    &-flex {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 16px;
+    }
+
+    &-header {
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 16px;
+        justify-content: space-between;
+    }
+
+    &-logo {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+
+        a {
+            font-size: 0;
+        }
+
+        svg {
+            display: inline-block;
+            height: auto;
+            vertical-align: top;
+            width: 120px;
+        }
+    }
+
+    .menu {
+        overflow: hidden;
+    }
+
+    .menu-heading {
+        border-bottom: 0;
+    }
+
+    details[open] .menu-heading {
+        border-bottom: 1px solid var(--color-border-muted);
+    }
+
+    .Box-row:first-of-type {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    &-table {
+        max-width: 800px;
+    }
+
+    .Subhead {
+        margin: 0;
+    }
+
+    .Subhead-heading {
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .Gridtable {
+        &-row {
+            display: grid;
+            grid-template-columns: auto repeat(2, minmax(0, 1fr)) 34px;
+        }
+    }
+}
+
+code {
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
