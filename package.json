@@ -32,6 +32,6 @@
     "pathFiles": "./src/files/",
     "pathStyles": "./src/styles/",
     "pathPages": "./src/pages/",
-    "dist": "https://fret2buzz.github.io/fret-11ty/"
+    "dist": "https://fret2buzz.github.io/fret-11ty"
   }
 }

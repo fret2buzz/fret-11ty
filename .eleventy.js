@@ -40,7 +40,7 @@ module.exports = function (config) {
     if (process.env.BUILD_ENV == 'production') {
         config.addGlobalData("dist", conf.dist);
     } else {
-        config.addGlobalData("dist", "/");
+        config.addGlobalData("dist", "http://127.0.0.1:8080");
     }
 
     // config.setBrowserSyncConfig({
