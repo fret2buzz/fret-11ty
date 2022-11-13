@@ -32,6 +32,6 @@
     "pathFiles": "./src/files/",
     "pathStyles": "./src/styles/",
     "pathPages": "./src/pages/",
-    "dist": "https://fret-11ty.netlify.app"
+    "baseUrl": "https://fret-11ty.netlify.app"
   }
 }
