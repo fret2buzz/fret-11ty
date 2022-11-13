@@ -43,6 +43,10 @@
         &.m-full {
             grid-template-columns: minmax(0, 1fr);
         }
+
+        @media (max-width: 768px) {
+            grid-template-columns: minmax(0, 1fr);
+        }
     }
 
     &-side {
@@ -56,6 +60,10 @@
             position: sticky;
             top: 0;
             z-index: 2;
+
+            @media (max-width: 768px) {
+                height: auto;
+            }
         }
 
         .m-full & {
