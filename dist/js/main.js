@@ -13,6 +13,42 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let navData = document.getElementById('elNavigationData').content.textContent;
     navData = JSON.parse(navData);
 
+    // Hide sidebar
+    let sidebar = document.getElementById('elHideSidebar');
+    let localSidebar = parseInt(localStorage.getItem('localSidebar'));
+
+    function showSidebar() {
+        document.body.classList.remove('m-full');
+        sidebar.removeAttribute('aria-selected');
+    }
+
+    function hideSidebar() {
+        document.body.classList.add('m-full');
+        sidebar.setAttribute('aria-selected', 'true');
+    }
+
+    function toggleSidebar() {
+        if (localSidebar) {
+            localStorage.setItem('localSidebar', 0);
+            localSidebar = 0;
+            showSidebar();
+        } else {
+            localStorage.setItem('localSidebar', 1);
+            localSidebar = 1;
+            hideSidebar();
+        }
+    }
+
+    if (localSidebar) {
+        hideSidebar();
+    } else {
+        showSidebar();
+    }
+
+    sidebar.addEventListener('click', () => {
+        toggleSidebar();
+    });
+
     // Mustache function
     let customTags = [ '<%', '%>' ];
 
