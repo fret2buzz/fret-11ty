@@ -55,7 +55,7 @@
                     {%- for section in collections[folder] -%}
                         {
                             "selected": {{ page.filePathStem == section.filePathStem }},
-                            "url": "{{ dist }}{{ section.url }}",
+                            "url": "{{ dist }}/{{ section.url }}",
                             "name": "{{ section.fileSlug }}"
                         }{% if not loop.last %},{% endif %}
                     {%- endfor -%}
@@ -70,7 +70,7 @@
                 {%- for section in collections.pages -%}
                     {
                         "selected": {{ page.filePathStem == section.filePathStem }},
-                        "url": "{{ dist }}{{ section.url }}",
+                        "url": "{{ dist }}/{{ section.url }}",
                         "name": "{{ section.data.title or section.fileSlug }}"
                     }{% if not loop.last %},{% endif %}
                 {%- endfor -%}

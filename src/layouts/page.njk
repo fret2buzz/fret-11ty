@@ -13,7 +13,16 @@
         <link rel="stylesheet" href="{{ dist }}/css/example.css">
         <script src="{{ dist }}/js/main.js" type="module"></script>
     </head>
-    <body class="l-fret11ty-body">
+
+    {% macro mod(arr) %}
+        {% for item in arr %}
+        {% if page.url != item %}
+            {{ pagination.pages[loop.index0].mod }}
+        {% endif %}
+        {% endfor -%}
+    {% endmacro %}
+    {% set modClass = mod(pagination.hrefs) | replace("\n", "") | replace(" ", "") %}
+    <body class="l-fret11ty-body {{ modClass}}">
         <aside class="l-fret11ty-side border-right">
             <div class="l-fret11ty-side_inner">
                 {% include 'aside.njk' %}

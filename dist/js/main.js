@@ -7,42 +7,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let searchClear = document.getElementById('elSearchClear');
     searchInput.value = localQuery;
 
-    // Hide sidebar
-    let sidebar = document.getElementById('elHideSidebar');
-    let localSidebar = parseInt(localStorage.getItem('localSidebar'));
-
-    function showSidebar() {
-        document.body.classList.remove('m-full');
-        sidebar.removeAttribute('aria-selected');
-    }
-
-    function hideSidebar() {
-        document.body.classList.add('m-full');
-        sidebar.setAttribute('aria-selected', 'true');
-    }
-
-    function toggleSidebar() {
-        if (localSidebar) {
-            localStorage.setItem('localSidebar', 0);
-            localSidebar = 0;
-            showSidebar();
-        } else {
-            localStorage.setItem('localSidebar', 1);
-            localSidebar = 1;
-            hideSidebar();
-        }
-    }
-
-    if (localSidebar) {
-        hideSidebar();
-    } else {
-        showSidebar();
-    }
-
-    sidebar.addEventListener('click', () => {
-        toggleSidebar();
-    });
-
     // Navigation
     let nav = document.getElementById('elNavigation');
     let navTpl = document.getElementById('elNavigationTpl').innerHTML;

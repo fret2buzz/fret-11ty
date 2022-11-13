@@ -37,12 +37,6 @@ module.exports = function (config) {
 
     config.addGlobalData("siteName", conf.siteName);
 
-    if (process.env.BUILD_ENV == 'production') {
-        config.addGlobalData("dist", conf.dist);
-    } else {
-        config.addGlobalData("dist", "http://127.0.0.1:8080");
-    }
-
     // config.setBrowserSyncConfig({
     //     files: ['./dist/css/*.css', './dist/js/*.js'],
     // });
@@ -104,6 +98,12 @@ module.exports = function (config) {
             zone: "Europe/Amsterdam",
         }).setLocale('en').toISODate();
     });
+
+    if (process.env.BUILD_ENV == 'production') {
+        config.addGlobalData("dist", conf.dist);
+    } else {
+        config.addGlobalData("dist", "http://127.0.0.1:8080");
+    }
 
     // You can return your Config object (optional).
     return {
