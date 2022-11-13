@@ -10476,6 +10476,9 @@ input::-webkit-inner-spin-button {
 .l-fret11ty details[open] .menu-heading {
   border-bottom: 1px solid var(--color-border-muted);
 }
+.l-fret11ty .Box {
+  overflow: hidden;
+}
 .l-fret11ty .Box-row:first-of-type {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -10494,6 +10497,16 @@ input::-webkit-inner-spin-button {
 .l-fret11ty .Gridtable-row {
   display: grid;
   grid-template-columns: auto repeat(2, minmax(0, 1fr)) 34px;
+}
+.l-fret11ty .Gridbox {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (min-width: 1012px) {
+  .l-fret11ty .Gridbox {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 code {

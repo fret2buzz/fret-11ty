@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>
-           Styleguide fret-11ty &mdash; _b-input
+           Styleguide fret-11ty &mdash; _colors
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai-sublime.min.css">
@@ -87,21 +87,21 @@
 {
     "nav": [{
                 "folder": "00-base",
-                "open": false,
+                "open": true,
                 "data": [{
-                            "selected": false,
+                            "selected": true,
                             "url": "https://fret-11ty.netlify.app/files/00-base/_colors/",
                             "name": "_colors"
                         }]
             },{
                 "folder": "01-blocks",
-                "open": true,
+                "open": false,
                 "data": [{
                             "selected": false,
                             "url": "https://fret-11ty.netlify.app/files/01-blocks/_b-button/",
                             "name": "_b-button"
                         },{
-                            "selected": true,
+                            "selected": false,
                             "url": "https://fret-11ty.netlify.app/files/01-blocks/_b-input/",
                             "name": "_b-input"
                         }]
@@ -129,11 +129,11 @@
             
 <div class="l-fret11ty-flex">
     <div class="l-fret11ty-header">
-        <h1>_b-input</h1>
+        <h1>_colors</h1>
 
         
             
-                <a class="btn" href="https://fret-11ty.netlify.app/files/01-blocks/_b-input/">
+                <a class="btn" href="https://fret-11ty.netlify.app/files/00-base/_colors/">
                     
                     
                         <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M5.25 1a.75.75 0 01.75.75v2.5A1.75 1.75 0 014.25 6h-2.5a.75.75 0 010-1.5h2.5a.25.25 0 00.25-.25v-2.5A.75.75 0 015.25 1zm5.5 0a.75.75 0 01.75.75v2.5c0 .138.112.25.25.25h2.5a.75.75 0 010 1.5h-2.5A1.75 1.75 0 0110 4.25v-2.5a.75.75 0 01.75-.75zM1 10.75a.75.75 0 01.75-.75h2.5c.966 0 1.75.784 1.75 1.75v2.5a.75.75 0 01-1.5 0v-2.5a.25.25 0 00-.25-.25h-2.5a.75.75 0 01-.75-.75zm9 1c0-.966.784-1.75 1.75-1.75h2.5a.75.75 0 010 1.5h-2.5a.25.25 0 00-.25.25v2.5a.75.75 0 01-1.5 0v-2.5z"></path></svg>
@@ -146,10 +146,10 @@
         </div>
     <div>
         <div class="Label mr-1">
-            ./src/files/01-blocks/_b-input.md
+            ./src/files/00-base/_colors.njk
         </div>
         <div class="Label mr-1 Label--accent">
-            2022-11-12
+            2022-11-13
         </div>
         <div class="Label mr-1 Label--secondary">
             files
@@ -157,8 +157,49 @@
     </div>
 </div>
 
-<div class="l-fret11ty-flex"><h2>Example</h2>
-<p>To keep track which files are not yet included to style guide run <code>npm run dircompare</code> to create comparison page.</p>
+<div class="l-fret11ty-flex"><div class="Gridbox">
+    
+        <div class="border" style="background: #333;"">
+            <div class="border-bottom" style="min-height: 80px;">
+                &nbsp;
+            </div>
+            <div class="color-bg-default py-3 px-3">
+                <div class="pb-2 text-bold">$grey</div>
+                <div class="Label Label--large text-mono">#333</div>
+            </div>
+        </div>
+    
+        <div class="border" style="background: #c33;"">
+            <div class="border-bottom" style="min-height: 80px;">
+                &nbsp;
+            </div>
+            <div class="color-bg-default py-3 px-3">
+                <div class="pb-2 text-bold">$red</div>
+                <div class="Label Label--large text-mono">#c33</div>
+            </div>
+        </div>
+    
+        <div class="border" style="background: #369;"">
+            <div class="border-bottom" style="min-height: 80px;">
+                &nbsp;
+            </div>
+            <div class="color-bg-default py-3 px-3">
+                <div class="pb-2 text-bold">$blue</div>
+                <div class="Label Label--large text-mono">#369</div>
+            </div>
+        </div>
+    
+        <div class="border" style="background: hsla(0, 0%, 0%, 0.6);"">
+            <div class="border-bottom" style="min-height: 80px;">
+                &nbsp;
+            </div>
+            <div class="color-bg-default py-3 px-3">
+                <div class="pb-2 text-bold">$color-black-transparent06</div>
+                <div class="Label Label--large text-mono">hsla(0, 0%, 0%, 0.6)</div>
+            </div>
+        </div>
+    
+</div>
 </div>
 
 

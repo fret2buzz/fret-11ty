@@ -1,0 +1,20 @@
+{
+    "colors": [
+        {
+            "value": "#333",
+            "name": "$grey"
+        },
+        {
+            "value": "#c33",
+            "name": "$red"
+        },
+        {
+            "value": "#369",
+            "name": "$blue"
+        },
+        {
+            "value": "hsla(0, 0%, 0%, 0.6)",
+            "name": "$color-black-transparent06"
+        }
+    ]
+}

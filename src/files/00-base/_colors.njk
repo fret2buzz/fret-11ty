@@ -1,0 +1,13 @@
+<div class="Gridbox">
+    {% for color in colors  %}
+        <div class="border" style="background: {{ color.value }};"">
+            <div class="border-bottom" style="min-height: 80px;">
+                &nbsp;
+            </div>
+            <div class="color-bg-default py-3 px-3">
+                <div class="pb-2 text-bold">{{ color.name }}</div>
+                <div class="Label Label--large text-mono">{{ color.value }}</div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

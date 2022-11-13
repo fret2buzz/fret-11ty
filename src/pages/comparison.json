@@ -13,14 +13,42 @@
           "type1": "missing",
           "type2": "file",
           "level": 0,
-          "size2": 55,
-          "date2": "2022-11-12T18:50:25.309Z"
+          "size2": 81,
+          "date2": "2022-11-13T16:20:28.547Z"
         }
       ]
     },
     {
       "folder": "00-base",
       "files": [
+        {
+          "path1": "./src/files/\\00-base",
+          "path2": "./src/styles/\\00-base",
+          "relativePath": "\\00-base",
+          "name1": "_colors.json",
+          "name2": "_colors.scss",
+          "state": "equal",
+          "permissionDeniedState": "access-ok",
+          "type1": "file",
+          "type2": "file",
+          "level": 1,
+          "size1": 373,
+          "size2": 38,
+          "date1": "2022-11-13T16:56:04.664Z",
+          "date2": "2022-11-13T16:21:29.322Z"
+        },
+        {
+          "path1": "./src/files/\\00-base",
+          "relativePath": "\\00-base",
+          "name1": "_colors.njk",
+          "state": "left",
+          "permissionDeniedState": "access-ok",
+          "type1": "file",
+          "type2": "missing",
+          "level": 1,
+          "size1": 490,
+          "date1": "2022-11-13T17:07:02.474Z"
+        },
         {
           "path2": "./src/styles/\\00-base",
           "relativePath": "\\00-base",
@@ -50,9 +78,9 @@
           "type2": "file",
           "level": 1,
           "size1": 617,
-          "size2": 154,
+          "size2": 156,
           "date1": "2022-11-12T22:52:37.181Z",
-          "date2": "2022-11-12T18:41:06.960Z"
+          "date2": "2022-11-13T16:21:30.008Z"
         },
         {
           "path1": "./src/files/\\01-blocks",
@@ -69,7 +97,7 @@
       ]
     }
   ],
-  "total": 3,
-  "done": 1,
+  "total": 4,
+  "done": 2,
   "leftToBeDone": 2
 }
