@@ -26,7 +26,6 @@ module.exports = function (config) {
     // config.addPassthroughCopy('src/images');
 
     config.addGlobalData("folders", folders);
-    config.addGlobalData("pathFiles", pathFiles);
 
     folders.forEach(value => {
         config.addCollection(value, function (collectionApi) {
