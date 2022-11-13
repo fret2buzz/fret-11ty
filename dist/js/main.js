@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     hljs.highlightAll();
 
     // Search input
-    const localQuery = localStorage.getItem('searchQuery') || '';
+    const localQuery = sessionStorage.getItem('searchQuery') || '';
     let searchInput = document.getElementById('elSearch');
     let searchClear = document.getElementById('elSearchClear');
     searchInput.value = localQuery;
@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Hide sidebar
     let sidebar = document.getElementById('elHideSidebar');
-    let localSidebar = parseInt(localStorage.getItem('localSidebar'));
+    let localSidebar = parseInt(sessionStorage.getItem('localSidebar'));
 
     function showSidebar() {
         document.body.classList.remove('m-full');
@@ -29,11 +29,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     function toggleSidebar() {
         if (localSidebar) {
-            localStorage.setItem('localSidebar', 0);
+            sessionStorage.setItem('localSidebar', 0);
             localSidebar = 0;
             showSidebar();
         } else {
-            localStorage.setItem('localSidebar', 1);
+            sessionStorage.setItem('localSidebar', 1);
             localSidebar = 1;
             hideSidebar();
         }
@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     function liveSearch() {
         let data;
         let query = searchInput.value.toLowerCase();
-        localStorage.setItem('searchQuery', query);
+        sessionStorage.setItem('searchQuery', query);
 
         if (query == '') {
             data = navData;
@@ -90,6 +90,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
 
         nav.innerHTML = template(navTpl, data);
+        let scrollNum = parseInt(sessionStorage.getItem('localNavScroll'));
+
+        nav.scrollTo({
+            top: scrollNum,
+            left: 0
+        });
     };
 
     //A little delay
@@ -104,6 +110,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
     searchClear.addEventListener('click', () => {
         searchInput.value = '';
         liveSearch();
+    });
+
+    let resizeTimer;
+    let resizeInterval = 100;
+    nav.addEventListener('scroll', (e) => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            sessionStorage.setItem('localNavScroll', nav.scrollTop);
+        }, resizeInterval);
     });
 
     liveSearch();
