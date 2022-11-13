@@ -40,7 +40,16 @@ function print(res) {
     }
 
     let list = [];
+    let total = 0;
+    let done = 0;
+
     res.diffSet.forEach(dif => {
+        if ((dif.state === 'right' || dif.state === 'equal') && dif.type2 != 'directory') {
+            total++;
+        }
+        if (dif.state === 'equal' && dif.type2 != 'directory') {
+            done++;
+        }
         list.push(dif.relativePath);
     });
 
@@ -49,6 +58,7 @@ function print(res) {
     });
 
     let arr = [];
+
     list.forEach(el => {
         let item = res.diffSet.filter(element => {
             if (element.type1 === 'directory' || element.type2 === 'directory') {
@@ -62,11 +72,15 @@ function print(res) {
             "folder": key,
             "files": item
         };
+
         arr.push(obj);
     });
     let finalResult = {
         "title": "Files comparison",
-        "comparison": arr
+        "comparison": arr,
+        "total": total,
+        "done": done,
+        "leftToBeDone": total - done
     };
 
     finalResult = JSON.stringify(finalResult, null, 2);

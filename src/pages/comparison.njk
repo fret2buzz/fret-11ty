@@ -1,11 +1,22 @@
+<div class="l-fret11ty-width_fixed">
+    <div class="Box">
+        <div class="Box-row text-bold">Coverage:  {{ done }} from {{ total }} scss files</div>
+        <div class="Box-row">
+            <div class="Progress Progress--large">
+                <span class="Progress-item color-bg-success-emphasis" style="width: {{ 100 * done / total }}%;"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
 {%- for item in comparison -%}
-    <div class="l-fret11ty-table">
-        <div class="Subhead">
+    <details class="l-fret11ty-width_fixed" open>
+        <summary class="Subhead">
             <h2 class="Subhead-heading">
                 <svg class="octicon mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.75 2.5a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H7.5c-.55 0-1.07-.26-1.4-.7l-.9-1.2a.25.25 0 00-.2-.1H1.75zM0 2.75C0 1.784.784 1 1.75 1H5c.55 0 1.07.26 1.4.7l.9 1.2a.25.25 0 00.2.1h6.75c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75z"></path></svg>
                 <span>{{ item.folder }}</span>
             </h2>
-        </div>
+        </summary>
 
         <div class="Gridtable color-bg-default">
             {%- for file in item.files -%}
@@ -13,7 +24,7 @@
                     <div class="border-left px-2 py-2 color-fg-accent">
                         {{ loop.index }}.
                     </div>
-                    <div class="px-2 py-2 {% if file.state != 'equal' %}color-fg-danger text-bold{% endif %}">
+                    <div class="border-left px-2 py-2 {% if file.state != 'equal' %}color-fg-danger text-bold{% endif %}">
                         {{ file.name1 }}
                     </div>
                     <div class="border-left px-2 py-2 {% if file.state != 'equal' %}color-fg-danger text-bold{% endif %}">
@@ -27,7 +38,7 @@
                 </div>
             {% endfor %}
         </div>
-    </div>
+    </details>
 {%  endfor %}
 
 

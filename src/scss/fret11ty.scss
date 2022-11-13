@@ -11,6 +11,7 @@
 @import '@primer/css/labels/labels.scss';
 
 @import '@primer/css/navigation/menu.scss';
+@import '@primer/css/progress/progress.scss';
 @import '@primer/css/subhead/subhead.scss';
 
 @import '@primer/css/forms/form-control.scss';
@@ -36,16 +37,16 @@
 .l-fret11ty {
     &-body {
         display: grid;
-        grid-template-columns: 300px minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
         min-height: 100vh;
         overflow-y: scroll;
 
-        &.m-full {
-            grid-template-columns: minmax(0, 1fr);
-        }
+        @include breakpoint(md) {
+            grid-template-columns: 300px minmax(0, 1fr);
 
-        @media (max-width: 768px) {
-            grid-template-columns: minmax(0, 1fr);
+            &.m-full {
+                grid-template-columns: minmax(0, 1fr);
+            }
         }
     }
 
@@ -56,13 +57,13 @@
             display: grid;
             grid-template-rows: auto auto 1fr auto;
             left: 0;
-            height: 100vh;
+            height: auto;
             position: sticky;
             top: 0;
             z-index: 2;
 
-            @media (max-width: 768px) {
-                height: auto;
+            @include breakpoint(md) {
+                height: 100vh;
             }
         }
 
@@ -129,7 +130,7 @@
         border-top-right-radius: 0;
     }
 
-    &-table {
+    &-width_fixed {
         max-width: 800px;
     }
 

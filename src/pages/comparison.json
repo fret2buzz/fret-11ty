@@ -68,5 +68,8 @@
         }
       ]
     }
-  ]
+  ],
+  "total": 3,
+  "done": 1,
+  "leftToBeDone": 2
 }
