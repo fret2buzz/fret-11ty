@@ -10,7 +10,7 @@ const options = {
     compareContent: false,
     compareNameHandler: customNameCompare,
     ignoreExtension: true,
-    excludeFilter: "*.js"
+    excludeFilter: "*.js,*.json"
  };
 
 function customNameCompare(name1, name2, options) {

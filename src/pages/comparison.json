@@ -25,29 +25,17 @@
           "path1": "./src/files/\\00-base",
           "path2": "./src/styles/\\00-base",
           "relativePath": "\\00-base",
-          "name1": "_colors.json",
+          "name1": "_colors.njk",
           "name2": "_colors.scss",
           "state": "equal",
           "permissionDeniedState": "access-ok",
           "type1": "file",
           "type2": "file",
           "level": 1,
-          "size1": 373,
-          "size2": 38,
-          "date1": "2022-11-13T16:56:04.664Z",
-          "date2": "2022-11-13T16:21:29.322Z"
-        },
-        {
-          "path1": "./src/files/\\00-base",
-          "relativePath": "\\00-base",
-          "name1": "_colors.njk",
-          "state": "left",
-          "permissionDeniedState": "access-ok",
-          "type1": "file",
-          "type2": "missing",
-          "level": 1,
           "size1": 490,
-          "date1": "2022-11-13T17:07:02.474Z"
+          "size2": 38,
+          "date1": "2022-11-13T17:07:02.474Z",
+          "date2": "2022-11-13T16:21:29.322Z"
         },
         {
           "path2": "./src/styles/\\00-base",
