@@ -13,8 +13,8 @@
             "name": "$blue"
         },
         {
-            "value": "hsla(0, 0%, 0%, 0.6)",
-            "name": "$color-black-transparent06"
+            "value": "hsla(0, 0%, 0%, 0.7)",
+            "name": "$color-black-transparent07"
         }
     ]
 }
