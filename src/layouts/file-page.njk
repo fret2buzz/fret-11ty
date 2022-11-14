@@ -24,7 +24,13 @@ layout: page.njk
     </div>
 </div>
 
-<div class="l-fret11ty-flex">{{ content | safe }}</div>
+<div class="l-fret11ty-flex">
+    {% if page.inputPath.indexOf(".md") != -1 %}
+        <div class="markdown-body">{{ content | safe }}</div>
+    {% else %}
+        {{ content | safe }}
+    {% endif %}
+</div>
 
 
 
