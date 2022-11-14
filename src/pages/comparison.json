@@ -22,7 +22,7 @@
       "folder": "00-base",
       "files": [
         {
-          "path1": "./src/files/\\00-base",
+          "path1": "./src/md/\\00-base",
           "path2": "./src/styles/\\00-base",
           "relativePath": "\\00-base",
           "name1": "_colors.njk",
@@ -55,7 +55,7 @@
       "folder": "01-blocks",
       "files": [
         {
-          "path1": "./src/files/\\01-blocks",
+          "path1": "./src/md/\\01-blocks",
           "path2": "./src/styles/\\01-blocks",
           "relativePath": "\\01-blocks",
           "name1": "_b-button.njk",
@@ -71,7 +71,7 @@
           "date2": "2022-11-13T16:21:30.008Z"
         },
         {
-          "path1": "./src/files/\\01-blocks",
+          "path1": "./src/md/\\01-blocks",
           "relativePath": "\\01-blocks",
           "name1": "_b-input.md",
           "state": "left",

@@ -28,7 +28,7 @@
   },
   "config11ty": {
     "siteName": "Styleguide fret-11ty",
-    "pathFiles": "./src/files/",
+    "pathFiles": "./src/md/",
     "pathStyles": "./src/styles/",
     "pathPages": "./src/pages/"
   }
