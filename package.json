@@ -5,14 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx @11ty/eleventy --config=.eleventy.js",
+    "dev": "node .dircompare && npx @11ty/eleventy --config=.eleventy.js",
+    "build": "node .dircompare && npx @11ty/eleventy --config=.eleventy.js --pathprefix=/fret-11ty/",
     "serve": "npx @11ty/eleventy --config=.eleventy.js --serve",
     "dircompare": "node .dircompare",
-    "watch": "node ./node_modules/sass/sass.js --load-path=node_modules --no-source-map -w \"./src/scss\":\"./dist/css\"",
-    "scss": "node ./node_modules/sass/sass.js --load-path=node_modules --no-source-map \"./src/scss\":\"./dist/css\"",
-    "styles": "node ./node_modules/sass/sass.js --load-path=node_modules --no-source-map \"./src/styles\":\"./dist/css\"",
-    "dev": "node .dircompare && npm run scss && npm run styles && npm run build",
-    "prod": "node .dircompare && npm run scss && npm run styles && cross-env BUILD_ENV=production npm run build"
+    "watch": "node ./node_modules/sass/sass.js --load-path=node_modules --no-source-map -w \"./src/scss\":\"./docs/css\"",
+    "scss": "node ./node_modules/sass/sass.js --load-path=node_modules --no-source-map \"./src/scss\":\"./docs/css\"",
+    "styles": "node ./node_modules/sass/sass.js --load-path=node_modules --no-source-map \"./src/styles\":\"./docs/css\""
   },
   "author": "",
   "license": "ISC",
@@ -31,7 +30,6 @@
     "siteName": "Styleguide fret-11ty",
     "pathFiles": "./src/files/",
     "pathStyles": "./src/styles/",
-    "pathPages": "./src/pages/",
-    "baseUrl": "https://fret-11ty.netlify.app"
+    "pathPages": "./src/pages/"
   }
 }

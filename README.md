@@ -1,6 +1,6 @@
 ## Demo
 
-[Demo](https://fret-11ty.netlify.app)
+[Demo](https://fret2buzz.github.io/fret-11ty/)
 
 ## Overview
 

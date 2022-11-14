@@ -46,7 +46,7 @@ module.exports = function (config) {
 
         if (arr != undefined && Array.isArray(arr)) {
             arr.forEach(el => {
-                replaced = content.replace("%%modifier%%", el);
+                replaced = content.replaceAll("%%modifier%%", el);
 
                 newContent = `
                     ${newContent}
@@ -98,17 +98,11 @@ module.exports = function (config) {
         }).setLocale('en').toISODate();
     });
 
-    if (process.env.BUILD_ENV == 'production') {
-        config.addGlobalData("baseUrl", conf.baseUrl);
-    } else {
-        config.addGlobalData("baseUrl", "http://127.0.0.1:8080");
-    }
-
     // You can return your Config object (optional).
     return {
         dir: {
             input: 'src',
-            output: 'dist',
+            output: 'docs',
             includes: 'includes',
             layouts: 'layouts',
         },

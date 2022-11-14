@@ -5,8 +5,7 @@
     {% include 'search.njk' %}
 </div>
 
-<div class="l-fret11ty-menu p-4">
-    <div id="elNavigation"></div>
+<div id="elNavigation" class="l-fret11ty-menu p-4">
 </div>
 
 <div class="color-bg-subtle px-4 py-2">
@@ -51,7 +50,7 @@
                     {%- for section in collections[folder] -%}
                         {
                             "selected": {{ page.filePathStem == section.filePathStem }},
-                            "url": "{{ baseUrl }}{{ section.url }}",
+                            "url": "{{ section.url | url }}",
                             "name": "{{ section.fileSlug }}"
                         }{% if not loop.last %},{% endif %}
                     {%- endfor -%}
@@ -66,7 +65,7 @@
                 {%- for section in collections.pages -%}
                     {
                         "selected": {{ page.filePathStem == section.filePathStem }},
-                        "url": "{{ baseUrl }}{{ section.url }}",
+                        "url": "{{ section.url | url }}",
                         "name": "{{ section.data.title or section.fileSlug }}"
                     }{% if not loop.last %},{% endif %}
                 {%- endfor -%}
