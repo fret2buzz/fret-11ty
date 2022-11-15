@@ -1,7 +1,6 @@
 const util = require('util');
 const path = require('path');
 const { DateTime } = require("luxon");
-const fs = require('fs');
 const markdown = require("markdown-it")({
     html: true
 });
@@ -11,42 +10,54 @@ const conf = require(path.join(projectRoot, 'package.json')).config11ty;
 
 const pathFiles = conf.pathFiles;
 
-function getDirectories(path) {
-    return fs.readdirSync(path).filter(function (file) {
-        return fs.statSync(path+'/'+file).isDirectory();
-    });
-}
-
-const folders = getDirectories(pathFiles);
+const pathData = conf.pathData;
+const folders = require(path.join(projectRoot, pathData + 'folders.json')).folders;
 
 module.exports = function (config) {
-    // config.addPassthroughCopy('src/favicon.ico');
-    // config.addPassthroughCopy('src/css');
-    // config.addPassthroughCopy('src/fonts');
-    // config.addPassthroughCopy('src/images');
+    config.addFilter('console', function (value) {
+        return util.inspect(value);
+    });
 
-    config.addGlobalData("folders", folders);
+    config.addFilter("postDate", (dateObj) => {
+        return DateTime.fromJSDate(dateObj, {
+            zone: "Europe/Amsterdam",
+        }).setLocale('en').toISODate();
+    });
 
     folders.forEach(value => {
-        config.addCollection(value, function (collectionApi) {
-            let pathToFile = pathFiles + value;
-            return collectionApi.getFilteredByGlob([pathToFile + "/**/*.njk", pathToFile + "/**/*.md"]);
+        config.addCollection(value.name, function (collectionApi) {
+            if (value.files) {
+                let pathToFile = pathFiles + value.path;
+                return collectionApi.getFilteredByGlob([pathToFile + "/*.njk", pathToFile + "/*.md"]).sort(function(a, b) {
+                    return a.inputPath.localeCompare(b.inputPath); // sort by path - ascending
+                });
+            }
         });
     });
 
     config.addGlobalData("siteName", conf.siteName);
 
-    // config.setBrowserSyncConfig({
-    //     files: ['./dist/css/*.css', './dist/js/*.js'],
-    // });
+    const mod = "%%modifier%%";
+    const idx = "%%index%%";
 
-    config.addPairedNunjucksShortcode("example", function(content, arr) {
-        let newContent = `<div class="Box-row">${content}</div>`;
-        let replaced = '';
+    config.addPairedNunjucksShortcode("example", function(content, arr, indexed) {
+        let replaced = content.replaceAll(mod, "");
+
+        if (indexed == "indexed") {
+            replaced = replaced.replaceAll(idx, "");
+        }
+
+        let newContent = `<div class="Box-row">${replaced}</div>`;
 
         if (arr != undefined && Array.isArray(arr)) {
-            arr.forEach(el => {
-                replaced = content.replaceAll("%%modifier%%", el);
+            arr.forEach((el, index) => {
+
+                let replaced = content.replaceAll(mod, el);
+
+                if (indexed == "indexed") {
+                    let i = index + 1;
+                    replaced = replaced.replaceAll(idx, i);
+                }
 
                 newContent = `
                     ${newContent}
@@ -85,17 +96,11 @@ module.exports = function (config) {
     });
 
     config.addPairedNunjucksShortcode("markdown", function(content) {
-        return `<div class="markdown-body">${markdown.render(content)}</div>`;
-    });
-
-    config.addFilter('console', function (value) {
-        return util.inspect(value);
-    });
-
-    config.addFilter("postDate", (dateObj) => {
-        return DateTime.fromJSDate(dateObj, {
-            zone: "Europe/Amsterdam",
-        }).setLocale('en').toISODate();
+        return `
+            <div class="markdown-body">
+                ${markdown.render(content)}
+            </div>
+        `;
     });
 
     // You can return your Config object (optional).

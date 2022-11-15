@@ -5,7 +5,7 @@
     {% include 'search.njk' %}
 </div>
 
-<div id="elNavigation" class="l-fret11ty-menu p-4">
+<div class="l-fret11ty-menu p-4" id="elNavigation">
 </div>
 
 <div class="color-bg-subtle px-4 py-2">
@@ -14,6 +14,7 @@
 
 <script id="elNavigationTpl" type="x-tmpl-mustache">
 <%#nav%>
+    <%#data.length%>
     <details
         class="menu mb-2"
         <%#hidden%>
@@ -36,18 +37,19 @@
             </a>
         <%/data%>
     </details>
+    <%/data.length%>
 <%/nav%>
 </script>
 
 <template id="elNavigationData">
 {
     "nav": [
-        {%- for folder in folders -%}
+        {%- for folder in folders.folders -%}
             {
-                "folder": "{{ folder }}",
-                "open": {{ page.filePathStem.indexOf(folder) != -1 }},
+                "folder": "{{ folder.name }}",
+                "open": {{ page.filePathStem.indexOf(folder.path) != -1 }},
                 "data": [
-                    {%- for section in collections[folder] -%}
+                    {%- for section in collections[folder.name] -%}
                         {
                             "selected": {{ page.filePathStem == section.filePathStem }},
                             "url": "{{ section.url | url }}",
@@ -57,10 +59,10 @@
                 ]
             }{% if not loop.last %},{% endif %}
         {%- endfor -%}
-        ,
+        {% if (folders.folders | length) %},{% endif %}
         {
-            "folder": "pages",
-            "open": {{ page.filePathStem.indexOf("pages") != -1 }},
+            "folder": "Pages",
+            "open": {{ page.filePathStem.indexOf("pages") != -1 or page.filePathStem == "/index" }},
             "data": [
                 {%- for section in collections.pages -%}
                     {

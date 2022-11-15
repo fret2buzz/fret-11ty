@@ -30,6 +30,7 @@
     "siteName": "Styleguide fret-11ty",
     "pathFiles": "./src/md/",
     "pathStyles": "./src/styles/",
+    "pathData": "./src/_data/",
     "pathPages": "./src/pages/"
   }
 }

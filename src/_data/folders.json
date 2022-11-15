@@ -1,8 +1,7 @@
 {
-  "title": "Files comparison",
-  "comparison": [
+  "folders": [
     {
-      "folder": "root",
+      "name": "root",
       "files": [
         {
           "path2": "./src/styles/",
@@ -16,10 +15,11 @@
           "size2": 81,
           "date2": "2022-11-13T16:20:28.547Z"
         }
-      ]
+      ],
+      "path": "root"
     },
     {
-      "folder": "00-base",
+      "name": "00-base",
       "files": [
         {
           "path1": "./src/md/\\00-base",
@@ -49,10 +49,11 @@
           "size2": 7036,
           "date2": "2022-11-12T18:50:00.899Z"
         }
-      ]
+      ],
+      "path": "00-base"
     },
     {
-      "folder": "01-blocks",
+      "name": "01-blocks",
       "files": [
         {
           "path1": "./src/md/\\01-blocks",
@@ -69,20 +70,27 @@
           "size2": 156,
           "date1": "2022-11-12T22:52:37.181Z",
           "date2": "2022-11-13T16:21:30.008Z"
-        },
+        }
+      ],
+      "path": "01-blocks"
+    },
+    {
+      "name": "01-blocks/common",
+      "files": [
         {
-          "path1": "./src/md/\\01-blocks",
-          "relativePath": "\\01-blocks",
+          "path1": "./src/md/\\01-blocks\\common",
+          "relativePath": "\\01-blocks\\common",
           "name1": "_b-input.md",
           "state": "left",
           "permissionDeniedState": "access-ok",
           "type1": "file",
           "type2": "missing",
-          "level": 1,
+          "level": 2,
           "size1": 126,
           "date1": "2022-11-12T19:23:43.205Z"
         }
-      ]
+      ],
+      "path": "01-blocks/common"
     }
   ],
   "total": 4,

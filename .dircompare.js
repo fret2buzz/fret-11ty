@@ -10,7 +10,7 @@ const options = {
     compareContent: false,
     compareNameHandler: customNameCompare,
     ignoreExtension: true,
-    excludeFilter: "*.js,*.json"
+    excludeFilter: "*.js,*.json,_all.scss"
  };
 
 function customNameCompare(name1, name2, options) {
@@ -67,17 +67,20 @@ function print(res) {
             return element.relativePath === el;
         });
         let key = el.replace("\\","");
+        key = key.replaceAll("\\","/");
         key = (key == '') ? 'root' : key;
+        let nameFile = key.replaceAll("\\", "-");
+
         let obj = {
-            "folder": key,
-            "files": item
+            "name": nameFile,
+            "files": item,
+            "path": key
         };
 
         arr.push(obj);
     });
     let finalResult = {
-        "title": "Files comparison",
-        "comparison": arr,
+        "folders": arr,
         "total": total,
         "done": done,
         "leftToBeDone": total - done
@@ -85,7 +88,7 @@ function print(res) {
 
     finalResult = JSON.stringify(finalResult, null, 2);
 
-    fs.writeFile(conf.pathPages + "comparison.json", finalResult, function(err) {
+    fs.writeFile(conf.pathData + "folders.json", finalResult, function(err) {
         if(err) {
             return console.log(err);
         }

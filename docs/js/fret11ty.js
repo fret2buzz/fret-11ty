@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let nav = document.getElementById('elNavigation');
     let navTpl = document.getElementById('elNavigationTpl').innerHTML;
     let navData = document.getElementById('elNavigationData').content.textContent;
+
     navData = JSON.parse(navData);
 
     // Hide sidebar
@@ -74,7 +75,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             navData.nav.forEach(el =>{
                 let filtered = el.data.filter(element => {
                     let search = element.name.toLowerCase().indexOf(query) != -1;
-                    return search;
+                    let folderSearch = el.folder.toLowerCase().indexOf(query) != -1;
+                    return search || folderSearch;
                 });
 
                 let item = {
