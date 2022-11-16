@@ -86,6 +86,10 @@
         display: flex;
         flex-flow: column nowrap;
         gap: 16px;
+
+        .markdown-body & {
+            margin-bottom: 16px;
+        }
     }
 
     &-header {
@@ -111,10 +115,6 @@
             vertical-align: top;
             width: 120px;
         }
-    }
-
-    .menu {
-        overflow: hidden;
     }
 
     .menu-heading {
@@ -164,11 +164,6 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
-}
-
-code {
-    border-radius: 4px;
-    font-size: 16px;
 }
 
 

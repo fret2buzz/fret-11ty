@@ -1,6 +1,4 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    hljs.highlightAll();
-
     // Search input
     const localQuery = sessionStorage.getItem('searchQuery') || '';
     let searchInput = document.getElementById('elSearch');
