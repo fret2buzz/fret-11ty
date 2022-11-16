@@ -66,10 +66,22 @@
           "type1": "file",
           "type2": "file",
           "level": 1,
-          "size1": 660,
+          "size1": 654,
           "size2": 156,
-          "date1": "2022-11-16T21:40:43.135Z",
+          "date1": "2022-11-16T22:41:01.194Z",
           "date2": "2022-11-13T16:21:30.008Z"
+        },
+        {
+          "path1": "./src/md/\\01-blocks",
+          "relativePath": "\\01-blocks",
+          "name1": "_b-card.md",
+          "state": "left",
+          "permissionDeniedState": "access-ok",
+          "type1": "file",
+          "type2": "missing",
+          "level": 1,
+          "size1": 324,
+          "date1": "2022-11-16T22:34:22.327Z"
         }
       ],
       "path": "01-blocks"
@@ -86,8 +98,8 @@
           "type1": "file",
           "type2": "missing",
           "level": 2,
-          "size1": 938,
-          "date1": "2022-11-16T21:51:25.791Z"
+          "size1": 941,
+          "date1": "2022-11-16T22:41:09.464Z"
         }
       ],
       "path": "01-blocks/common"

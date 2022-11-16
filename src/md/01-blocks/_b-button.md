@@ -1,6 +1,5 @@
 ---
 mods:
-    -
     - m-danger
     - m-accent
 ---

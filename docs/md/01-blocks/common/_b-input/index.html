@@ -100,6 +100,10 @@
                             "selected": false,
                             "url": "/fret-11ty/md/01-blocks/_b-button/",
                             "name": "_b-button"
+                        },{
+                            "selected": false,
+                            "url": "/fret-11ty/md/01-blocks/_b-card/",
+                            "name": "_b-card"
                         }]
             },{
                 "folder": "01-blocks/common",
@@ -160,13 +164,13 @@
 <div class="l-fret11ty-flex">
 <div class="Box">
 <div class="Box-row">
-<div class="text-mono text-bold pb-3">
-.
+<div class="pb-3">
+<span class="Label Label--large f5 text-mono">default</span>
 </div>
-<p><label for="input-1">Some label</label>
+<label for="input-1">Some label</label>
 <input
     class="b-input "
-    id="input-1"
+    id="input-disabled-1"
     type="text"
 />
 <br /><br />
@@ -176,16 +180,16 @@
     class="b-input "
     id="input-disabled-1"
     type="text"
-/></p>
+/>
 </div>
 <div class="Box-row">
-<div class="text-mono text-bold pb-3">
-.m-valid
+<div class="pb-3">
+<span class="Label Label--large f5 text-mono">.m-valid</span>
 </div>
-<p><label for="input-2">Some label</label>
+<label for="input-2">Some label</label>
 <input
     class="b-input m-valid"
-    id="input-2"
+    id="input-disabled-2"
     type="text"
 />
 <br /><br />
@@ -195,16 +199,16 @@
     class="b-input m-valid"
     id="input-disabled-2"
     type="text"
-/></p>
+/>
 </div>
 <div class="Box-row">
-<div class="text-mono text-bold pb-3">
-.m-error
+<div class="pb-3">
+<span class="Label Label--large f5 text-mono">.m-error</span>
 </div>
-<p><label for="input-3">Some label</label>
+<label for="input-3">Some label</label>
 <input
     class="b-input m-error"
-    id="input-3"
+    id="input-disabled-3"
     type="text"
 />
 <br /><br />
@@ -214,12 +218,12 @@
     class="b-input m-error"
     id="input-disabled-3"
     type="text"
-/></p>
+/>
 </div>
 <div class="Box-row">
 <details class="mb-0">
 <summary>Code:</summary>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Some label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b-input <span class="token punctuation">"</span></span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input<span class="token punctuation">"</span></span><br>    <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><br><span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Some label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><br>    <span class="token attr-name">disabled</span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b-input <span class="token punctuation">"</span></span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-disabled<span class="token punctuation">"</span></span><br>    <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><br><span class="token punctuation">/></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Some label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b-input <span class="token punctuation">"</span></span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-disabled<span class="token punctuation">"</span></span><br>    <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><br><span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Some label<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span><br>    <span class="token attr-name">disabled</span><br>    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>b-input <span class="token punctuation">"</span></span><br>    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input-disabled<span class="token punctuation">"</span></span><br>    <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><br><span class="token punctuation">/></span></span></code></pre>
 </details>
 </div>
 </div>

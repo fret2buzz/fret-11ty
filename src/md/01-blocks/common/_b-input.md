@@ -1,6 +1,5 @@
 ---
 mods:
-    -
     - m-valid
     - m-error
 ---
@@ -11,7 +10,7 @@ Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo adipisci blanditii
 <label for="input{% if idx %}-{{ idx }}{% endif %}">Some label</label>
 <input
     class="b-input {{ mod }}"
-    id="input{% if idx %}-{{ idx }}{% endif %}"
+    id="input-disabled{% if idx %}-{{ idx }}{% endif %}"
     type="text"
 />
 <br /><br />
