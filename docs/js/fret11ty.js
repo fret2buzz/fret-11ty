@@ -102,6 +102,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let typingTimer;
     let typeInterval = 500;
 
+    document.body.addEventListener('keyup', (e) => {
+        if (e.key == 'Enter' && e.altKey) {
+            toggleSidebar();
+        }
+    });
+
     searchInput.addEventListener('keyup', () => {
         clearTimeout(typingTimer);
         typingTimer = setTimeout(liveSearch, typeInterval);
