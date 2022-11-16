@@ -11,16 +11,15 @@ layout: page.njk
         </button>
     </div>
     <div>
-        <span class="Label Label--large mr-1 text-mono">
+        Input path:
+        <span class="text-mono">
             {{ page.inputPath }}
         </span>
-
+    </div>
+    <div>
+        Date:
         <span class="Label Label--large mr-1">
             {{ page.date | postDate }}
-        </span>
-
-        <span class="Label Label--large mr-1 Label--accent">
-            {{ tags }}
         </span>
     </div>
 </div>
