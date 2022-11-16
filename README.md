@@ -43,35 +43,18 @@ Source of styles should have the same folder structure and file names
 │
 ...
 ```
-## Examples
 
-Describe HTML example using `{% example %}` short code
+## Example
+
+Use macro to create examples
 
 with modifiers
 ```
-{% example ["m-danger", "m-accent"] %}
-<button class="b-button %%modifier%%">
+{% macro html(mod) %}
+<button class="b-button {{ mod }}">
     CTA Value
 </button>
-{% endexample %}
-```
-
-without modifiers
-```
-{% example %}
-<button class="b-button %%modifier%%">
-    CTA Value
-</button>
-{% endexample %}
-```
-
-`{% markdown %}` shortcode
-```
-{% markdown %}
-# Heading 1
-
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo adipisci blanditiis quaerat vitae pariatur deleniti modi nobis magni iusto dicta eius cumque eligendi, dolore doloribus vel optio repellat labore. Earum.
-{% endmarkdown %}
+{% endmacro %}
 ```
 
 ## Compare folders
