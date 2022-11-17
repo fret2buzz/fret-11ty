@@ -16,7 +16,7 @@
 <summary>Code:</summary>
 
 ```html
-{{ html(item, loop.index) | trim }}
+{{ html(item, 0) | trim }}
 ```
 </details>
 </div>
