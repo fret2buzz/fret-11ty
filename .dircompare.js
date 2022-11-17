@@ -10,7 +10,7 @@ const options = {
     compareContent: false,
     compareNameHandler: customNameCompare,
     ignoreExtension: true,
-    excludeFilter: "*.js,*.json,_all.scss"
+    excludeFilter: "*.js,*.json,_all.scss,_all.md"
  };
 
 function customNameCompare(name1, name2, options) {
@@ -34,7 +34,7 @@ dircompare.compare(path1, path2, options)
   .catch(error => console.error(error));
 
 function print(res) {
-    console.log(`Same: ${res.same}`)
+    // console.log(`Same: ${res.same}`)
     if (!res.diffSet) {
         return;
     }
@@ -64,12 +64,13 @@ function print(res) {
             if (element.type1 === 'directory' || element.type2 === 'directory') {
                 return false;
             }
+
             return element.relativePath === el;
         });
+
         let key = el.replace("\\","");
         key = key.replaceAll("\\","/");
-        key = (key == '') ? 'root' : key;
-        let nameFile = key.replaceAll("\\", "-");
+        let nameFile = (key == '') ? 'root' : key.replaceAll("/", "-");
 
         let obj = {
             "name": nameFile,

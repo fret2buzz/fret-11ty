@@ -10441,6 +10441,31 @@ input::-webkit-inner-spin-button {
 .l-fret11ty-menu {
   overflow-y: auto;
 }
+.l-fret11ty-menu_title {
+  left: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.l-fret11ty-menu_item {
+  color: var(--color-fg-default);
+  display: block;
+  position: relative;
+}
+.l-fret11ty-menu_item[aria-current=page] {
+  color: var(--color-fg-default);
+  font-weight: 600;
+}
+.l-fret11ty-menu_item[aria-current=page]::before {
+  background: var(--color-accent-emphasis);
+  content: "";
+  height: 16px;
+  left: 24px;
+  margin-top: -8px;
+  position: absolute;
+  top: 50%;
+  width: 4px;
+}
 .l-fret11ty-flex {
   display: flex;
   flex-flow: column nowrap;
@@ -10469,12 +10494,6 @@ input::-webkit-inner-spin-button {
   height: auto;
   vertical-align: top;
   width: 120px;
-}
-.l-fret11ty .menu-heading {
-  border-bottom: 0;
-}
-.l-fret11ty details[open] .menu-heading {
-  border-bottom: 1px solid var(--color-border-muted);
 }
 .l-fret11ty .Box {
   overflow: hidden;

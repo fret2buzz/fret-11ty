@@ -15,6 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Hide sidebar
     let sidebar = document.getElementById('elHideSidebar');
     let localSidebar = parseInt(sessionStorage.getItem('localSidebar'));
+    console.log(sidebar, document.getElementById('elHideSidebar'));
 
     function showSidebar() {
         document.body.classList.remove('m-full');

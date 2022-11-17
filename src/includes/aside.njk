@@ -5,7 +5,7 @@
     {% include 'search.njk' %}
 </div>
 
-<div class="l-fret11ty-menu p-4" id="elNavigation">
+<div class="l-fret11ty-menu" id="elNavigation">
 </div>
 
 <div class="color-bg-subtle px-4 py-2">
@@ -16,7 +16,6 @@
 <%#nav%>
     <%#data.length%>
     <details
-        class="menu mb-2"
         <%#hidden%>
             hidden
         <%/hidden%>
@@ -24,17 +23,17 @@
             open
         <%/open%>
     >
-        <summary class="menu-heading color-bg-subtle">
-            <span><%folder%></span>
+        <summary class="l-fret11ty-menu_title px-4 py-2 border-bottom color-bg-subtle">
+            <span class="f4 text-bold"><%folder%></span>
         </summary>
         <%#data%>
-            <a
-                class="menu-item"
-                href="<%url%>"
-                <%#selected%>aria-current="page"<%/selected%>
-            >
-                <%name%>
-            </a>
+        <a
+            class="<%#selected%>color-bg-accent<%/selected%> l-fret11ty-menu_item pr-4 pl-6 py-2 border-bottom"
+            href="<%url%>"
+            <%#selected%>aria-current="page"<%/selected%>
+        >
+            <%name%>
+        </a>
         <%/data%>
     </details>
     <%/data.length%>
@@ -44,6 +43,19 @@
 <template id="elNavigationData">
 {
     "nav": [
+        {
+            "folder": "Pages",
+            "open": {{ page.filePathStem.indexOf("pages") != -1 or page.filePathStem == "/index" }},
+            "data": [
+                {%- for section in collections.pages -%}
+                    {
+                        "selected": {{ page.filePathStem == section.filePathStem }},
+                        "url": "{{ section.url | url }}",
+                        "name": "{{ section.data.title or section.fileSlug }}"
+                    }{% if not loop.last %},{% endif %}
+                {%- endfor -%}
+            ]
+        },
         {%- for folder in folders.folders -%}
             {
                 "folder": "{{ folder.name }}",
@@ -59,20 +71,6 @@
                 ]
             }{% if not loop.last %},{% endif %}
         {%- endfor -%}
-        {% if (folders.folders | length) %},{% endif %}
-        {
-            "folder": "Pages",
-            "open": {{ page.filePathStem.indexOf("pages") != -1 or page.filePathStem == "/index" }},
-            "data": [
-                {%- for section in collections.pages -%}
-                    {
-                        "selected": {{ page.filePathStem == section.filePathStem }},
-                        "url": "{{ section.url | url }}",
-                        "name": "{{ section.data.title or section.fileSlug }}"
-                    }{% if not loop.last %},{% endif %}
-                {%- endfor -%}
-            ]
-        }
     ]
 }
 </template>

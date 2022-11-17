@@ -82,6 +82,35 @@
         overflow-y: auto;
     }
 
+    &-menu_title {
+        left: 0;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    &-menu_item {
+        color: var(--color-fg-default);
+        display: block;
+        position: relative;
+
+        &[aria-current='page'] {
+            color: var(--color-fg-default);
+            font-weight: 600;
+
+            &::before {
+                background: var(--color-accent-emphasis);
+                content: '';
+                height: 16px;
+                left: 24px;
+                margin-top: -8px;
+                position: absolute;
+                top: 50%;
+                width: 4px;
+            }
+        }
+    }
+
     &-flex {
         display: flex;
         flex-flow: column nowrap;
@@ -115,14 +144,6 @@
             vertical-align: top;
             width: 120px;
         }
-    }
-
-    .menu-heading {
-        border-bottom: 0;
-    }
-
-    details[open] .menu-heading {
-        border-bottom: 1px solid var(--color-border-muted);
     }
 
     .Box {

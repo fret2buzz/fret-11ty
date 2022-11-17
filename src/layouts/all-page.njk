@@ -1,0 +1,28 @@
+---
+layout: page.njk
+---
+
+{% include 'page-header.njk' %}
+
+{% for item in collections[collectionName] %}
+    {% if item.fileSlug != "_all" %}
+        <h2>{{ item.data.title or item.fileSlug }}</h2>
+        <div class="l-fret11ty-flex">
+            <div>
+                Input path:
+                <span class="text-mono">
+                    {{ item.inputPath }}
+                </span>
+            </div>
+            <div>
+                Date:
+                <span class="Label Label--large mr-1">
+                    {{ item.date | postDate }}
+                </span>
+            </div>
+        </div>
+        {{ item.templateContent | safe }}
+    {% endif %}
+{% endfor %}
+
+

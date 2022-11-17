@@ -30,8 +30,8 @@
     <div class="input-group">
     <input class="form-control" placeholder="Search" type="text" id="elSearch">
     <span class="input-group-button">
-        <button class="btn" type="button" aria-label="Clear field" id="elSearchClear">
-            <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z"></path></svg>
+        <button class="btn f6 text-mono" type="button" aria-label="Clear field" id="elSearchClear">
+            Clear
         </button>
     </span>
 </div>
@@ -40,7 +40,7 @@
 
 </div>
 
-<div class="l-fret11ty-menu p-4" id="elNavigation">
+<div class="l-fret11ty-menu" id="elNavigation">
 </div>
 
 <div class="color-bg-subtle px-4 py-2">
@@ -54,7 +54,6 @@
 <%#nav%>
     <%#data.length%>
     <details
-        class="menu mb-2"
         <%#hidden%>
             hidden
         <%/hidden%>
@@ -62,17 +61,17 @@
             open
         <%/open%>
     >
-        <summary class="menu-heading color-bg-subtle">
-            <span><%folder%></span>
+        <summary class="l-fret11ty-menu_title px-4 py-2 border-bottom color-bg-subtle">
+            <span class="f4 text-bold"><%folder%></span>
         </summary>
         <%#data%>
-            <a
-                class="menu-item"
-                href="<%url%>"
-                <%#selected%>aria-current="page"<%/selected%>
-            >
-                <%name%>
-            </a>
+        <a
+            class="<%#selected%>color-bg-accent<%/selected%> l-fret11ty-menu_item pr-4 pl-6 py-2 border-bottom"
+            href="<%url%>"
+            <%#selected%>aria-current="page"<%/selected%>
+        >
+            <%name%>
+        </a>
         <%/data%>
     </details>
     <%/data.length%>
@@ -81,39 +80,7 @@
 
 <template id="elNavigationData">
 {
-    "nav": [{
-                "folder": "root",
-                "open": false,
-                "data": []
-            },{
-                "folder": "00-base",
-                "open": false,
-                "data": [{
-                            "selected": false,
-                            "url": "/fret-11ty/md/00-base/_colors/",
-                            "name": "_colors"
-                        }]
-            },{
-                "folder": "01-blocks",
-                "open": true,
-                "data": [{
-                            "selected": false,
-                            "url": "/fret-11ty/md/01-blocks/_b-button/",
-                            "name": "_b-button"
-                        },{
-                            "selected": false,
-                            "url": "/fret-11ty/md/01-blocks/_b-card/",
-                            "name": "_b-card"
-                        }]
-            },{
-                "folder": "01-blocks/common",
-                "open": true,
-                "data": [{
-                            "selected": true,
-                            "url": "/fret-11ty/md/01-blocks/common/_b-input/",
-                            "name": "_b-input"
-                        }]
-            },
+    "nav": [
         {
             "folder": "Pages",
             "open": false,
@@ -126,8 +93,55 @@
                         "url": "/fret-11ty/pages/comparison/",
                         "name": "Files comparison"
                     }]
-        }
-    ]
+        },{
+                "folder": "root",
+                "open": true,
+                "data": []
+            },{
+                "folder": "00-base",
+                "open": false,
+                "data": [{
+                            "selected": false,
+                            "url": "/fret-11ty/md/00-base/_all/",
+                            "name": "_all"
+                        },{
+                            "selected": false,
+                            "url": "/fret-11ty/md/00-base/_colors/",
+                            "name": "_colors"
+                        }]
+            },{
+                "folder": "01-blocks",
+                "open": true,
+                "data": [{
+                            "selected": false,
+                            "url": "/fret-11ty/md/01-blocks/_all/",
+                            "name": "_all"
+                        },{
+                            "selected": false,
+                            "url": "/fret-11ty/md/01-blocks/_b-button/",
+                            "name": "_b-button"
+                        },{
+                            "selected": false,
+                            "url": "/fret-11ty/md/01-blocks/_b-card/",
+                            "name": "_b-card"
+                        }]
+            },{
+                "folder": "01-blocks-common",
+                "open": true,
+                "data": [{
+                            "selected": false,
+                            "url": "/fret-11ty/md/01-blocks/common/_all/",
+                            "name": "_all"
+                        },{
+                            "selected": false,
+                            "url": "/fret-11ty/md/01-blocks/common/_b-banner/",
+                            "name": "_b-banner"
+                        },{
+                            "selected": true,
+                            "url": "/fret-11ty/md/01-blocks/common/_b-input/",
+                            "name": "_b-input"
+                        }]
+            }]
 }
 </template>
 
@@ -143,6 +157,10 @@
             <span class="text-mono">Alt+Enter</span>
         </button>
     </div>
+</div>
+
+
+<div class="l-fret11ty-flex">
     <div>
         Input path:
         <span class="text-mono">
@@ -156,6 +174,7 @@
         </span>
     </div>
 </div>
+
 
 <div class="l-fret11ty-flex">
     
